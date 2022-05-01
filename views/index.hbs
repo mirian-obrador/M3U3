@@ -9,12 +9,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="/home">Home</a>
-          <a class="nav-link" href="/nosotros">Nosotros</a>
-          <a class="nav-link" href="/asesorias">Asesorias</a>
-          <a class="nav-link" href="/decoracion">Decoración</a>
-          <a class="nav-link" href="/tendencias">Tendencias</a>
-          <a class="nav-link" href="/contacto">Contacto</a>
+          <a class="nav-link active" aria-current="page" href="#home">Home</a>
+          <a class="nav-link" href="#nosotros">Nosotros</a>
+          <a class="nav-link" href="#asesorias">Asesorias</a>
+          <a class="nav-link" href="#decoracion">Decoración</a>
+          <a class="nav-link" href="#tendencias">Tendencias</a>
+          <a class="nav-link" href="#contacto">Contacto</a>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
 
   <!--empieza Nosotros-->
   <div class="row">
-    <div class="col-lg-5 offset-lg-1 py-5">
+    <div id="nosotros" class="col-lg-5 offset-lg-1 py-5">
       <h2>Nosotros</h2>
       <img class="nosotros" src="images/Nosotros1.png" width="300" height="300">
       <p class="intro py-4"> Hola soy Mirian creadora de Enredados. Al igual que muchos otros
@@ -46,7 +46,7 @@
       <!--termina nosotros-->
     </div>
     <!--empieza Asesorias-->
-    <div class="col-lg-5 py-5">
+    <div id="asesorias" class="col-lg-5 py-5">
       <h2>Asesorias</h2>
       <p class="asesoria1 py-4"> <strong>No sabes por donde empezar? No desesperes!</strong>
         Contamos con asesorias personalizadas en donde te
@@ -103,7 +103,7 @@
 
   </div>
   <!--Arranca decoración-->
-  <div class="row align-items-center py-3">
+  <div id="decoracion" class="row align-items-center py-3">
     <h2 class="deco">Decoración</h2>
     <p class="seccionDeco py-4"> Inspírate y decora</p>
     <div class="col-lg-8 offset-lg-3">
@@ -177,7 +177,7 @@
   <!--termina decoracion-->
   <!--Arranca Tendencias-->
   <div class="row">
-    <div class="col-lg-5 offset-lg-1 py-5">
+    <div id="tendencias" class="col-lg-5 offset-lg-1 py-5">
       <h2 class="deco">Tendencias</h2>
       <p class="seccionDeco py-4"> Si estás pensando en cambiar la decoración y buscas inspiración, aca te contamos
         cuáles
@@ -216,29 +216,36 @@
     </div>
     <!--termina Tendencias-->
     <!--Arranca Contacto-->
-    <div class="col-lg-4 py-5">
+    <div id="contacto" class="col-lg-4 py-5">
       <h2 class=" formulario deco">Contacto</h2>
       <p class="consultas py-4">¿Consultas o sugerencias? Envianos tu mensaje:</p>
       <form action="/" method="post">
       <div class=" formulario mb-3 py-4">
         <label for="exampleFormControlInput1" class="form-label">Nombre</label>
         <input type="text" class="form-control" id="nombre" placeholder=""  name="nombre">
-        <label for="exampleFormControlInput1" class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="apellido" placeholder="" name="apellido">
-        <label for="exampleFormControlInput1" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" name="email">
+      </div>
+      <div class=" formulario mb-3">
+         <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+         <input type="text" class="form-control" id="apellido" placeholder="" name="apellido">
+      </div>
+      <div class=" formulario mb-3">
+         <label for="exampleFormControlInput1" class="form-label">Email</label>
+         <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" name="email">
       </div>
       <div class="formulario mb-3">
         <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
         <textarea class="form-control" id="mensaje" rows="3" name="mensaje"></textarea>
-        <div class="botonEnvio col-lg-4 py-4"> <button type="submit" value="Enviar este mensaje" class="enviar btn btn-light">Enviar</button></div>
+      
+      <div class="botonEnvio col-lg-4 py-4">
+           <button type="submit" class="enviar btn btn-light">Enviar</button>
       </div>
+    </form>
+      </div>
+   </div>
 
     </div>
-    </form>
-    {{#if message}}
-        {{message}}
-    {{/if}}    
+ 
+ 
     <!--termina Contacto-->
   
   <div class="row">
