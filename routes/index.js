@@ -17,22 +17,20 @@ router.post("/", async (req, res, next) => {
       nombre +
       " " +
       apellido +
-      " se contacto a través de la web y quiere más información a este correo:" +
+      " se contacto a través de la web y quiere más información a este correo: " +
       email +
-      ". <br> Además, hizo este comentario: " +
+      ".<br> Además, hizo este comentario: " +
       mensaje,
   };
 
-  var smtpConfig = {
-    host: SMTP_HOST,
-    port: SMTP_PORT,
+  var transporter = nodemailer.createTransport({
+    host: "smtp.mailtrap.io",
+    port: "2525",
     auth: {
-      user: SMTP_USER,
-      pass: SMTP_PASS,
+      user: "614f80030fa85e",
+      pass: "e0f3268d074965",
     },
-  };
-
-  var transporter = nodemailer.createTransport(smtpConfig);
+  });
 
   var info = await transporter.sendMail(obj);
 
