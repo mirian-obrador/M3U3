@@ -8,8 +8,8 @@ router.post("/", async (req, res, next) => {
   var email = req.body.email;
   var mensaje = req.body.mensaje;
 
-  console.log("mostrar variables");
   console.log(req.body);
+
   var obj = {
     to: "obradormirian@gmail.com",
     subject: "Contacto web Enredados",
@@ -24,11 +24,11 @@ router.post("/", async (req, res, next) => {
   };
 
   var transporter = nodemailer.createTransport({
-    host: "smtp.mailtrap.io",
-    port: "2525",
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
     auth: {
-      user: "614f80030fa85e",
-      pass: "e0f3268d074965",
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
     },
   });
 
